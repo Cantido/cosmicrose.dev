@@ -1,4 +1,5 @@
 ---
+import FormattedDate from '../components/FormattedDate.astro';
 import ProseLayout from './ProseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
@@ -7,6 +8,7 @@ const { frontmatter } = Astro.props;
     <h1 class="mb-0">{frontmatter.title}</h1>
 
     <p class="mt-2 italic text-slate-400">by Rosa Richter</p>
+    <FormattedDate date={frontmatter.publishDate} />
   </header>
 
   <slot />

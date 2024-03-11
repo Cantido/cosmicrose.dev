@@ -1,9 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import ProseLayout from '../../layouts/ProseLayout.astro';
-const publishedPosts = await getCollection('blog', ({ data }) => {
+const publishedPosts = (await getCollection('blog', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
-});
+})).sort(
+  (a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
+);
 const pageTitle = "Rosa's Blog";
 ---
 <ProseLayout pageTitle={pageTitle}>

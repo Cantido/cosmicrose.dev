@@ -1,6 +1,7 @@
 ---
 title: Test post please ignore
 draft: true
+publishDate: 2024-03-11
 ---
 
 Dolores aut ut nemo repudiandae tempore aut. Sed aut repellendus aperiam quia. Numquam eveniet consequuntur a. Nostrum aliquid facere earum voluptatem dolor illo cumque. Deserunt provident ut qui omnis. Aspernatur vitae nisi exercitationem consectetur est ratione et.
