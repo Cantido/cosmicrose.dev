@@ -1,12 +1,38 @@
 ---
 ---
-<nav class="py-4 px-8 flex justify-between container mx-auto">
-  <a href="/" class="font-bold">cosmicrose.dev</a>
-  <ul class="">
-    <a href="/about">About</a>
-    &middot;
-    <a href="/contact">Contact</a>
-    &middot;
-    <a href="/blog">Blog</a>
+<nav id="main-nav" class="bg-slate-700 group" aria-expanded="false">
+  <div class="p-4 flex justify-between container mx-auto">
+    <a href="/" class="font-bold">cosmicrose.dev</a>
+
+
+    <div id="nav-toggle" class="aspect-square w-6">
+      <div class="group-aria-expanded:block hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
+      </div>
+      <div class="group-aria-expanded:hidden block">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+      </div>
+    </div>
+  </div>
+  <ul class="group-aria-expanded:block hidden border-t border-1 border-slate-500">
+    <a href="/about" class="block p-4 border-b border-1 border-slate-500">About</a>
+    <a href="/contact" class="block p-4 border-b border-1 border-slate-500">Contact</a>
+    <a href="/blog" class="block p-4">Blog</a>
   </ul>
 </nav>
+
+<script>
+  const navtoggle = document.getElementById('nav-toggle');
+
+  navtoggle.addEventListener('click', () => {
+    const nav = document.getElementById('main-nav');
+    const expanded = nav.getAttribute('aria-expanded');
+
+    if (expanded === "true") {
+      nav.setAttribute('aria-expanded', 'false');
+    } else {
+      nav.setAttribute('aria-expanded', 'true');
+    }
+  });
+</script>
+
