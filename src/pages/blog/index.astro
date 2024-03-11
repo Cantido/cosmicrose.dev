@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+const allPosts = await getCollection('blog');
+const pageTitle = "Rosa's Blog";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+
+  <article class="prose prose-slate prose-invert p-4">
+    <h1>Rosa's Blog Posts</h1>
+
+    <ul>
+      {allPosts.map((post) => <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>)}
+    </ul>
+  </article>
+</BaseLayout>
+
+
