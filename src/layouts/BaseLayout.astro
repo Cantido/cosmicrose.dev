@@ -3,7 +3,7 @@ import '../styles/global.css';
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="h-full w-full">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -11,7 +11,7 @@ const { pageTitle } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class="bg-slate-900 text-white">
+  <body class="bg-zinc-900 bg-fixed bg-contain bg-center text-white h-full w-full">
     <slot />
 	</body>
 </html>
