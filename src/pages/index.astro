@@ -9,30 +9,35 @@ const pageTitle = "Rosa Richter";
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
-  <Image src={rosaImage} alt="Rosa" class="mb-2" />
+  <article class="container mx-auto grid md:grid-cols-2">
+    <Image src={rosaImage} alt="Rosa" class="mb-2" />
 
-  <hgroup class="px-4 mb-4">
-    <h1 class="text-xl font-bold">Rosa Richter</h1>
-    <p class="text-slate-400">software developer &middot; she/her</p>
-  </hgroup>
+    <div>
+      <hgroup class="px-4 mb-4 md:col-start-2">
+        <h1 class="text-xl font-bold">Rosa Richter</h1>
+        <p class="text-slate-400">software developer &middot; she/her</p>
+      </hgroup>
 
-  <p class="px-4 mb-16">
-  Hey look, buddy, I'm an engineer. That means I solve problems.
-  Not problems like "what is beauty," because that would fall within the purview of your conundrums of philosophy.
-  I solve practical problems.<sup><a href="#cite" class="text-slate-400 underline">1</a></sup>
-  </p>
+      <p class="px-4 mb-12 max-w-prose">
+      Hey look, buddy, I'm an engineer. That means I solve problems.
+      Not problems like "what is beauty," because that would fall within the purview of your conundrums of philosophy.
+      I solve practical problems.<sup><a href="#cite" class="text-slate-400 underline">1</a></sup>
+      </p>
 
-  <div class="grid grid-cols-2 gap-4 px-4 mb-16">
-    <a class="p-4 bg-slate-600 text-center rounded font-bold" href="https://github.com/Cantido">See my code</a>
-    <a class="p-4 border border-slate-600 text-center rounded font-bold" href="/blog">Read my blog</a>
-  </div>
+      <div class="grid grid-cols-2 gap-4 px-4 mb-16">
+        <a class="p-4 bg-slate-600 text-center rounded font-bold" href="https://github.com/Cantido">See my code</a>
+        <a class="p-4 border border-slate-600 text-center rounded font-bold" href="/blog">Read my blog</a>
+      </div>
 
-  <aside class="px-4">
-    <p id="cite" class="text-sm text-slate-400">1. <span class="italic">Team Fortress 2</span>. Valve Software.</p>
-  </aside>
+      <aside class="px-4">
+        <p id="cite" class="text-sm text-slate-400">1. <span class="italic">Team Fortress 2</span>. Valve Software.</p>
+      </aside>
 
-  <footer class="p-4">
-    <p class="text-sm text-slate-400 text-center">&copy; 2024 Rosa Richter</p>
-  </footer>
+    </div>
+
+    <footer class="p-4 md:col-span-2 mt-12">
+      <p class="text-sm text-slate-400 text-center">&copy; 2024 Rosa Richter</p>
+    </footer>
+  </article>
 </BaseLayout>
 
