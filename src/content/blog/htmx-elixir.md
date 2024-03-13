@@ -1,7 +1,6 @@
 ---
 title: What I learned from building several HTMX apps on Elixir Phoenix
-draft: true
-publishDate: 2024-03-12T12:00:00-05:00
+publishDate: 2024-03-12T19:00:00-06:00
 ---
 
 Ever since I learned about [htmx](https://htmx.org) a few months ago, I've been hooked on it.
