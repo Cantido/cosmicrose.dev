@@ -28,7 +28,7 @@ This quote from [intercooler.js](https://intercoolerjs.org/2016/02/17/api-churn-
 > This place is called... the server side.
 
 Whether or not you agree with this approach, I still suggest that you take a look at a few of the articles on [htmx's essays page](https://htmx.org/essays/).
-They answered my questions and soothed my concerns while indoctrinating me into the magic of the HOWL stack.
+They answered my questions and soothed my concerns while teaching me the magic of the HOWL stack.
 (HOWL stands for "Hypermedia On Whatever you'd Like," a tongue-in-cheek way to say that any tech stack capable of producing HTML can easily use the hypermedia approach.)
 
 I've built two applications with HTMX so far. Both apps use Elixir's Phoenix framework as a backend.
