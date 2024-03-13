@@ -94,7 +94,7 @@ It would be very much in the spirit of HTMX to collapse this sprawling separatio
 I'd still like to keep Phoenix's HEEx templates and the `~H""` sigil, though.
 HEEx's function components are extremely convenient, I just wish they didn't have LiveView wired directly into them.
 
-My recommendation here is to just build a `Plug` application, and experiment with other template engines like `Surface`.
+My recommendation here is to just build a `Plug` application, and experiment with other template engines like [Surface](https://surface-ui.org/).
 
 ## Routing
 
