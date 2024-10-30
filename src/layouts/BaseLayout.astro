@@ -13,6 +13,9 @@ const { pageTitle } = Astro.props;
     <script data-goatcounter="https://cosmicrose.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 		<title>{pageTitle}</title>
+    <link rel="alternate" type="application/rss+xml"
+      title="RSS Feed for cosmicrose.dev"
+      href="/rss.xml/" />
 	</head>
   <body class="bg-slate-950 bg-fixed bg-contain bg-center text-white h-full w-full">
     <slot />
