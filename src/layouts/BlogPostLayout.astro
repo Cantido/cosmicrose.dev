@@ -5,9 +5,9 @@ const { frontmatter } = Astro.props;
 ---
 <ProseLayout pageTitle={frontmatter.title}>
   <header>
-    <h1 class="mb-0">{frontmatter.title}</h1>
+    <h1>{frontmatter.title}</h1>
 
-    <p class="mt-2 italic text-slate-400">by Rosa Richter</p>
+    <p class="mt-2 font-bold mb-0">by Rosa Richter</p>
     <FormattedDate date={frontmatter.publishDate} />
   </header>
 
