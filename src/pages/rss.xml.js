@@ -25,7 +25,7 @@ export async function GET(context) {
   }
 
   return rss({
-    title: 'Rosa’s Blog',
+    title: 'Rosa Richter',
     description: 'I solve practical problems',
     site: context.site,
     items: items,
