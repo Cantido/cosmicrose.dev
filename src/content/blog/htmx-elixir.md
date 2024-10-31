@@ -1,5 +1,6 @@
 ---
 title: What I learned from building several HTMX apps on Elixir Phoenix
+author: rosa-richter
 publishDate: 2024-03-12T19:00:00-06:00
 ---
 

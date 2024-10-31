@@ -1,13 +1,16 @@
 ---
+import { getEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import ProseLayout from './ProseLayout.astro';
 const { frontmatter } = Astro.props;
+
+const author = await getEntry(frontmatter.author);
 ---
 <ProseLayout pageTitle={frontmatter.title}>
   <header>
     <h1>{frontmatter.title}</h1>
 
-    <p class="mt-2 font-bold mb-0">by Rosa Richter</p>
+    <p class="mt-2 font-bold mb-0">by {author.data.name}</p>
     <FormattedDate date={frontmatter.publishDate} />
   </header>
 
