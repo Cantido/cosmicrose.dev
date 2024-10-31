@@ -15,7 +15,7 @@ export async function GET(context) {
     const author = await getEntry(post.data.author);
     const item = {
       title: post.data.title,
-      author: author.data.name,
+      author: author.data.email,
       pubDate: post.data.publishDate,
       description: post.data.description,
       link: `/blog/${post.slug}`,
@@ -34,7 +34,7 @@ export async function GET(context) {
     items: items,
     customData:
       `<language>en-us</language>` +
-      `<atom:link href="http://cosmicrose.dev/rss.xml" rel="self" type="application/rss+xml" />` +
+      `<atom:link href="https://cosmicrose.dev/rss.xml" rel="self" type="application/rss+xml" />` +
     `<managingEditor>cosmic.lady.rosa@gmail.com (Rosa Richter)</managingEditor>` +
     `<webMaster>cosmic.lady.rosa@gmail.com (Rosa Richter)</webMaster>`,
   });
