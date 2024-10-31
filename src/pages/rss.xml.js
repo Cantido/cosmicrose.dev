@@ -25,10 +25,17 @@ export async function GET(context) {
   }
 
   return rss({
+    xmlns: {
+      atom: "http://www.w3.org/2005/Atom",
+    },
     title: 'Rosa Richter',
-    description: 'I solve practical problems',
+    description: 'Blog posts from Rosa Richter',
     site: context.site,
     items: items,
-    customData: `<language>en-us</language>`,
+    customData:
+      `<language>en-us</language>` +
+      `<atom:link href="http://cosmicrose.dev/rss.xml" rel="self" type="application/rss+xml" />` +
+    `<managingEditor>cosmic.lady.rosa@gmail.com (Rosa Richter)</managingEditor>` +
+    `<webMaster>cosmic.lady.rosa@gmail.com (Rosa Richter)</webMaster>`,
   });
 }
