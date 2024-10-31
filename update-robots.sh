@@ -8,3 +8,7 @@ curl "https://api.darkvisitors.com/robots-txts" \
   -H "Content-Type: application/json" \
   --data @darkvisitors.json \
   -o public/robots.txt
+
+echo '' >> public/robots.txt
+echo '' >> public/robots.txt
+echo 'Sitemap: https://cosmicrose.dev/sitemap-index.xml' >> public/robots.txt
