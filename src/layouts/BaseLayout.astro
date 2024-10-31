@@ -3,7 +3,7 @@ import '../styles/global.css';
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" class="h-full w-full">
+<html lang="en" class="h-full w-full" data-theme="night">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -17,7 +17,7 @@ const { pageTitle } = Astro.props;
       title="RSS Feed for cosmicrose.dev"
       href="/rss.xml/" />
 	</head>
-  <body class="bg-slate-950 bg-fixed bg-contain bg-center text-white h-full w-full">
+  <body class="h-full w-full">
     <slot />
 	</body>
 </html>

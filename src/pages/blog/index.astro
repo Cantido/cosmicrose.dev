@@ -12,7 +12,7 @@ const pageTitle = "Rosa's Blog";
   <h1>Rosa's Blog Posts</h1>
 
   <ul>
-    {publishedPosts.map((post) => <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>)}
+    {publishedPosts.map((post) => <li><a class="link" href={`/blog/${post.slug}`}>{post.data.title}</a></li>)}
   </ul>
 </ProseLayout>
 
