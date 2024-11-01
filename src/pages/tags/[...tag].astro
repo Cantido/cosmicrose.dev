@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import ProseLayout from '../../layouts/ProseLayout.astro';
+
+const pageTitle = "Tagged posts";
+
+
+export async function getStaticPaths() {
+  const tags = (await getCollection('blog', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  })).flatMap(({ data }) => {
+    return data.tags
+  });
+
+  return tags.map(tag => ({
+    params: { tag: tag }, props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+
+const taggedPosts = (await getCollection('blog', ({ data }) => {
+  const isPublished = import.meta.env.PROD ? data.draft !== true : true;
+  const isTagged = data.tags.includes(tag);
+
+  return isPublished && isTagged;
+})).sort(
+  (a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
+);
+---
+<ProseLayout pageTitle={pageTitle}>
+  <h1>Posts tagged &ldquo;{tag}&rdquo;</h1>
+
+  <ul>
+    {taggedPosts.map((post) => <li><a class="link" href={`/blog/${post.slug}`}>{post.data.title}</a></li>)}
+  </ul>
+</ProseLayout>

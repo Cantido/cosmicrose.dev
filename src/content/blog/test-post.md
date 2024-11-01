@@ -1,6 +1,7 @@
 ---
 title: Test post please ignore
 author: rosa-richter
+tags: []
 draft: true
 publishDate: 2024-03-11
 ---

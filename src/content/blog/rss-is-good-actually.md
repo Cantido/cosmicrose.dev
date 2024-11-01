@@ -1,6 +1,7 @@
 ---
 title: RSS is good, actually
 author: rosa-richter
+tags: [rss]
 draft: true
 description: RSS is supported by a huge number of sites, and modern social media is all about regurgitating content from other sites. Why isn't everyone using RSS?
 publishDate: 2024-10-31
