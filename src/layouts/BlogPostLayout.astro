@@ -11,20 +11,20 @@ const author = await getEntry(frontmatter.author);
 <BaseLayout pageTitle={frontmatter.title} pageDescription={frontmatter.description}>
   <Navigation />
 
-  <main class="prose prose-invert mt-6 container mx-auto font-serif">
-    <header class="not-prose mt-10 mb-10 text-left max-w-prose mx-auto font-display">
-      <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
+  <header class="mt-10 mb-10 text-left max-w-prose mx-auto">
+    <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
 
-      <div class="mb-4">
-        <TagList tags={frontmatter.tags} />
-      </div>
+    <div class="mb-4">
+      <TagList tags={frontmatter.tags} />
+    </div>
 
-      <p class="mt-2 mb-0 text-xl font-bold">by {author.data.name}</p>
-      <p class="text-xl"><FormattedDate date={frontmatter.publishDate} /></p>
-    </header>
+    <p class="mt-2 font-bold mb-0">by {author.data.name}</p>
+    <p><FormattedDate date={frontmatter.publishDate} /></p>
+  </header>
 
+  <article class="prose prose-invert mt-6 container mx-auto">
     <slot />
-  </main>
+  </article>
 
 
   <footer class="mt-16 footer footer-center">
