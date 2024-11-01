@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import TagList from '../components/TagList.astro';
 import ProseLayout from './ProseLayout.astro';
 const { frontmatter } = Astro.props;
 
@@ -9,13 +10,10 @@ const author = await getEntry(frontmatter.author);
 <ProseLayout pageTitle={frontmatter.title} pageDescription={frontmatter.description}>
   <header class="not-prose mb-10 text-left">
     <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
-    <ul class="flex flex-row gap-2 mb-4">
-      {frontmatter.tags.map((tag) => (
-      <li class="inline-block">
-        <a href={`/tags/${tag}`} class="badge badge-primary">#{tag.toString()}</a>
-      </li>
-      ))}
-    </ul>
+
+    <div class="mb-4">
+      <TagList tags={frontmatter.tags} />
+    </div>
 
     <p class="mt-2 font-bold mb-0">by {author.data.name}</p>
     <p><FormattedDate date={frontmatter.publishDate} /></p>

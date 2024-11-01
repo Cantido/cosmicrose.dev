@@ -1,5 +1,6 @@
 ---
 import FormattedDate from '../components/FormattedDate.astro';
+import TagList from '../components/TagList.astro';
 const { post } = Astro.props;
 ---
 <a href={`/blog/${post.slug}`}>
@@ -17,9 +18,7 @@ const { post } = Astro.props;
         </p>
 
         <p>
-        {post.data.tags.map((tag) =>
-          <a class="link-hover badge badge-primary mr-2" href={`/tags/${tag}`}>#{tag}</a>
-        )}
+          <TagList tags={post.data.tags} />
         </p>
       </div>
     </div>

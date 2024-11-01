@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
+import TagList from '../../components/TagList.astro';
 const tags = (await getCollection('blog', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
 })).flatMap(({ data }) => {
@@ -17,9 +18,7 @@ const pageTitle = "Rosa's blog tags";
     <h1 class="text-4xl font-bold mb-8">Tags</h1>
 
     <div class="flex flex-row gap-1">
-      {tags.map((tag) => <div>
-        <a href={`/tags/${tag}`} class="link-hover badge badge-primary">#{tag.toString()}</a>
-      </div>)}
+      <TagList tags={tags} />
     </div>
   </div>
 </BaseLayout>
