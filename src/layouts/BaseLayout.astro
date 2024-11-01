@@ -36,6 +36,57 @@ const { pageTitle, pageDescription } = Astro.props;
       title="RSS Feed for cosmicrose.dev"
       href="/rss.xml/" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <style>
+
+      @font-face {
+          font-family: 'Libertinus Serif';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Libertinus Serif'), url('/fonts/LibertinusSerif-Regular.woff2') format('woff');
+      }
+      @font-face {
+          font-family: 'Libertinus Serif';
+          font-style: italic;
+          font-weight: 400;
+          src: local('Libertinus Serif'), url('/fonts/LibertinusSerif-Italic.woff2') format('woff');
+      }
+      @font-face {
+          font-family: 'Libertinus Serif';
+          font-style: normal;
+          font-weight: 600;
+          src: local('Libertinus Serif'), url('/fonts/LibertinusSerif-Semibold.woff2') format('woff');
+      }
+      @font-face {
+          font-family: 'Libertinus Serif';
+          font-style: italic;
+          font-weight: 600;
+          src: local('Libertinus Serif'), url('/fonts/LibertinusSerif-SemiboldItalic.woff2') format('woff');
+      }
+      @font-face {
+          font-family: 'Libertinus Serif';
+          font-style: normal;
+          font-weight: 700;
+          src: local('Libertinus Serif'), url('/fonts/LibertinusSerif-Bold.woff2') format('woff');
+      }
+      @font-face {
+          font-family: 'Libertinus Serif';
+          font-style: italic;
+          font-weight: 700;
+          src: local('Libertinus Serif'), url('/fonts/LibertinusSerif-BoldItalic.woff2') format('woff');
+      }
+      @font-face {
+          font-family: 'Libertinus Serif Display';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Libertinus Serif Display'), url('/fonts/LibertinusSerifDisplay-Regular.woff2') format('woff');
+      }
+      @font-face {
+          font-family: 'Libertinus Serif Initials';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Libertinus Serif Initials'), url('/fonts/LibertinusSerifInitials-Regular.woff2') format('woff');
+      }
+    </style>
 	</head>
   <body class="h-full w-full">
     <slot />
