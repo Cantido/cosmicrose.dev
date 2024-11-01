@@ -1,12 +1,17 @@
 ---
-import ProseLayout from '../layouts/ProseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
 ---
-<ProseLayout pageTitle="Contact Rosa">
-  <h1>Contact Rosa</h1>
+<BaseLayout pageTitle="Contact Rosa">
+  <Navigation />
 
-  <ul>
-    <li><a rel="me noopener noreferrer" target="_blank" class="link" href="https://matrix.to/#/@cosmicrose:matrix.org">@cosmicrose:matrix.org</a> on Matrix</li>
-    <li><a rel="me noopener noreferrer" target="_blank" class="link" href="https://discordapp.com/users/224950023081689088">cosmicrosa</a> on Discord</li>
-    <li><a rel="me noopener noreferrer" target="_blank" class="link" href="https://tech.lgbt/@cosmicrose">@cosmicrose@tech.lgbt</a> on Mastodon</li>
-  </ul>
-</ProseLayout>
+  <main class="prose prose-invert mx-auto mt-16">
+    <h1>Contact Rosa</h1>
+
+    <ul>
+      <li><a rel="me noopener noreferrer" target="_blank" class="link" href="https://matrix.to/#/@cosmicrose:matrix.org">@cosmicrose:matrix.org</a> on Matrix</li>
+      <li><a rel="me noopener noreferrer" target="_blank" class="link" href="https://discordapp.com/users/224950023081689088">cosmicrosa</a> on Discord</li>
+      <li><a rel="me noopener noreferrer" target="_blank" class="link" href="https://tech.lgbt/@cosmicrose">@cosmicrose@tech.lgbt</a> on Mastodon</li>
+    </ul>
+  </main>
+</BaseLayout>
