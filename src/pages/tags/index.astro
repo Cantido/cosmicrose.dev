@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+const tags = (await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+})).flatMap(({ data }) => {
+  return data.tags
+}).sort();
+const pageTitle = "Rosa's blog tags";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+
+  <div class="p-4 mt-6 container mx-auto text-justify">
+    <h1 class="text-4xl font-bold mb-8">Tags</h1>
+
+    <div class="flex flex-row gap-1">
+      {tags.map((tag) => <div>
+        <a href={`/tags/${tag}`} class="link-hover badge badge-primary">#{tag.toString()}</a>
+      </div>)}
+    </div>
+  </div>
+</BaseLayout>
+
+
