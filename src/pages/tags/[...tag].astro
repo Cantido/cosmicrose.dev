@@ -33,7 +33,7 @@ const taggedPosts = (await getCollection('blog', ({ data }) => {
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
-  <div class="p-4 mt-6 container mx-auto text-justify">
+  <div class="p-4 mt-6 container mx-auto text-justify max-w-prose">
     <h1 class="text-4xl font-bold mb-8"> Posts tagged &ldquo;{tag}&rdquo;</h1>
 
     <div class="flex flex-col gap-4">
