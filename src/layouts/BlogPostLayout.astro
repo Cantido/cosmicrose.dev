@@ -6,7 +6,7 @@ const { frontmatter } = Astro.props;
 
 const author = await getEntry(frontmatter.author);
 ---
-<ProseLayout pageTitle={frontmatter.title}>
+<ProseLayout pageTitle={frontmatter.title} pageDescription={frontmatter.description}>
   <header>
     <h1>{frontmatter.title}</h1>
 
