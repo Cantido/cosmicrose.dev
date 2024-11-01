@@ -1,0 +1,28 @@
+---
+import FormattedDate from '../components/FormattedDate.astro';
+const { post } = Astro.props;
+---
+<a href={`/blog/${post.slug}`}>
+  <div class="card shadow-xl bg-neutral text-neutral-content">
+    <div class="card-body">
+      <h2 class="card-title">
+        {post.data.title}
+      </h2>
+      <div>
+        <p class="mb-4 opacity-50 italic">
+          <FormattedDate date={post.data.publishDate} />
+        </p>
+        <p class="mb-4">
+          {post.data.description}
+        </p>
+
+        <p>
+        {post.data.tags.map((tag) =>
+          <a class="link-hover badge badge-primary mr-2" href={`/tags/${tag}`}>#{tag}</a>
+        )}
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+

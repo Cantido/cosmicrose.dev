@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import ProseLayout from '../../layouts/ProseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
 
 const pageTitle = "Tagged posts";
 
@@ -28,10 +30,15 @@ const taggedPosts = (await getCollection('blog', ({ data }) => {
   (a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
 );
 ---
-<ProseLayout pageTitle={pageTitle}>
-  <h1>Posts tagged &ldquo;{tag}&rdquo;</h1>
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
 
-  <ul>
-    {taggedPosts.map((post) => <li><a class="link" href={`/blog/${post.slug}`}>{post.data.title}</a></li>)}
-  </ul>
-</ProseLayout>
+  <div class="p-4 mt-6 container mx-auto text-justify">
+    <h1 class="text-4xl font-bold mb-8"> Posts tagged &ldquo;{tag}&rdquo;</h1>
+
+    <div class="flex flex-col gap-4">
+      {taggedPosts.map((post) => <div>
+        <BlogPostCard post={post} />
+      </div>)}
+    </div>
+</BaseLayout>
