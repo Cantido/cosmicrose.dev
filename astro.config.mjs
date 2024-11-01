@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [tailwind(), sitemap()],
   markdown: {
     shikiConfig: {
-      theme: 'rose-pine',
+      theme: 'vitesse-black',
     },
   },
   site: 'https://cosmicrose.dev',
