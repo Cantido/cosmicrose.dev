@@ -9,30 +9,29 @@ const pageTitle = "Rosa Richter";
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
-  <article class="container mx-auto grid md:grid-cols-2 pt-4">
-    <Image src={rosaImage} alt="Rosa" class="mb-2" />
-
-    <div>
-      <hgroup class="px-4 mb-4 md:col-start-2">
-        <h1 class="text-xl font-bold">Rosa Richter</h1>
-        <p class="text-slate-400">software developer &middot; she/her</p>
-      </hgroup>
-
-      <p class="px-4 mb-12 max-w-prose">
-      Hey look, buddy, I'm an engineer. That means I solve problems.
-      Not problems like "what is beauty," because that would fall within the purview of your conundrums of philosophy.
-      I solve practical problems.
-      </p>
-
-      <div class="grid grid-cols-2 gap-4 px-4 mb-16">
-        <a class="p-4 btn btn-primary" href="https://github.com/Cantido">See my code</a>
-        <a class="p-4 btn btn-outline" href="/blog">Read my blog</a>
+  <div class="hero min-h-screen">
+    <div class="hero-content flex-col lg:flex-row">
+      <Image src={rosaImage} alt="Rosa" class="rounded-xl" />
+      <div>
+        <hgroup class="mb-4 md:col-start-2">
+          <h1 class="text-xl font-bold">Rosa Richter</h1>
+          <p class="opacity-50">software developer &middot; she/her</p>
+        </hgroup>
+        <p class="max-w-prose mb-4">
+        Hey look, buddy, I'm an engineer. That means I solve problems.
+        Not problems like "what is beauty," because that would fall within the purview of your conundrums of philosophy.
+        I solve practical problems.
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+          <button class="btn btn-primary" href="https://github.com/Cantido">See my code</button>
+          <button class="btn btn-outline" href="/blog">Read my blog</button>
+        </div>
       </div>
     </div>
+  </div>
 
-    <footer class="footer footer-center p-4 md:col-span-2 mt-12">
-      <p>&copy; 2024 Rosa Richter</p>
-    </footer>
-  </article>
+  <footer class="footer footer-center p-4 md:col-span-2">
+    <p>&copy; 2024 Rosa Richter</p>
+  </footer>
 </BaseLayout>
 
