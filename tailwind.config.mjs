@@ -9,6 +9,9 @@ export default {
           'League Spartan',
           ...defaultTheme.fontFamily.sans,
         ],
+        display: [
+          'Protest Strike',
+        ],
       },
     },
 	},
