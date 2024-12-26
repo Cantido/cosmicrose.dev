@@ -3,7 +3,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import TagList from '../components/TagList.astro';
 const { post } = Astro.props;
 ---
-<a href={`/blog/${post.slug}`}>
+<a href={`/blog/${post.id}`}>
   <div class="card shadow-xl bg-neutral text-neutral-content">
     <div class="card-body">
       <h2 class="card-title">

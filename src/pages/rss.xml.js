@@ -18,7 +18,7 @@ export async function GET(context) {
       author: author.data.email,
       pubDate: post.data.publishDate,
       description: post.data.description,
-      link: `/blog/${post.slug}`,
+      link: `/blog/${post.id}`,
     }
 
     items.push(item);

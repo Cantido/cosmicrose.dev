@@ -11,13 +11,13 @@
     "robots": "./update-robots.sh"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.9",
+    "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/tailwind": "^5.1.4",
     "@fontsource/league-spartan": "^5.1.0",
     "@fontsource/protest-strike": "^5.1.0",
     "@tailwindcss/typography": "^0.5.13",
-    "astro": "^4.16.18",
+    "astro": "^5.1.1",
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
