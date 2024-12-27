@@ -31,3 +31,17 @@ Abstractions hide irrelevant details within each layer, reducing the likelihood 
 All of a layer's components should serve a related purpose.
 
 
+## Uncertainty is the first target
+
+The next couple of sections address what you can do when parts of a project are uncertain, or risky. You can take two approaches:
+
+1. Take a vertical slice of the most uncertain functionality, and start developing there.
+2. Build a prototype that can answer your question quickly, and throw it away when you're done.
+
+## Try a domain-specific language
+
+"external" DSLs, which are custom syntax requiring you to implement your own parser, vs "internal" DSLs, which are implemented within an exising programming language.
+
+## Take time to make estimates
+
+
