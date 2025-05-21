@@ -3,19 +3,25 @@ import { Image } from 'astro:assets';
 import rosaImage from '../images/rosa.jpg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
 const pageTitle = "Rosa Richter";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
-  <div class="hero">
+  <div class="hero" vocab="https://schema.org" typeof="Person" about="https://cosmicrose.dev/rosa/#me">
     <div class="hero-content flex-col md:flex-row">
-      <Image src={rosaImage} alt="Rosa" class="rounded-xl" />
+      <Image src={rosaImage} alt="Rosa" class="rounded-xl" property="image" />
       <div>
         <hgroup class="mb-4">
-          <h1 class="text-xl font-bold">Rosa Richter</h1>
-          <p class="opacity-50">software developer &middot; she/her</p>
+          <h1 class="text-xl font-bold" property="name">
+            <span property="givenName">Rosa</span>
+            <span property="familyName">Richter</span>
+          </h1>
+          <p class="opacity-50">
+            <span property="jobTitle">software developer</span>
+            &middot;
+            <span property="pronouns">she/her</span>
+          </p>
         </hgroup>
         <p class="max-w-prose mb-4">
         Hey look, buddy, I'm an engineer. That means I solve problems.
@@ -23,7 +29,7 @@ const pageTitle = "Rosa Richter";
         I solve practical problems.
         </p>
         <div class="grid grid-cols-2 gap-4">
-          <a class="btn btn-primary" href="https://github.com/Cantido">See my code</a>
+          <a class="btn btn-primary" rel="me" href="https://github.com/Cantido">See my code</a>
           <a class="btn btn-outline" href="/blog">Read my blog</a>
         </div>
       </div>
@@ -31,7 +37,7 @@ const pageTitle = "Rosa Richter";
   </div>
 
   <footer class="footer footer-center p-4">
-    <p>&copy; 2024 Rosa Richter</p>
+    <p>&copy; 2025 Rosa Richter</p>
   </footer>
 </BaseLayout>
 

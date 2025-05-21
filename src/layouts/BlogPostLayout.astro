@@ -11,32 +11,36 @@ const author = await getEntry(frontmatter.author);
 <BaseLayout pageTitle={frontmatter.title} pageDescription={frontmatter.description}>
   <Navigation />
 
-  <main class="prose mx-auto p-4">
-    <header class="mb-10 text-left not-prose">
-      <h1 class="text-4xl mb-2 font-display">{frontmatter.title}</h1>
+  <div vocab="https://schema.org" typeof="BlogPosting">
+    <main class="prose mx-auto p-4">
+      <header class="mb-10 text-left not-prose">
+        <h1 class="text-4xl mb-2 font-display" property="name">{frontmatter.title}</h1>
 
-      <div class="mb-4">
-        <TagList tags={frontmatter.tags} />
+        <div class="mb-4" property="keywords">
+          <TagList tags={frontmatter.tags} />
+        </div>
+
+        <p class="mt-2 font-bold mb-0">by {author.data.name}</p>
+        <p property="datePublished"><FormattedDate date={frontmatter.publishDate} /></p>
+      </header>
+
+      <div property="text">
+        <slot />
       </div>
 
-      <p class="mt-2 font-bold mb-0">by {author.data.name}</p>
-      <p><FormattedDate date={frontmatter.publishDate} /></p>
-    </header>
+    </main>
 
-    <slot />
-
-  </main>
-
-  <footer class="footer footer-center p-4 bg-base-200 text-base-content">
-    <aside>
-      <p xmlns:cc="http://creativecommons.org/ns#">
-      This work by
-      <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://cosmicrose.dev">Rosa Richter</a>
-      is licensed under
-      <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-        CC BY-SA 4.0
-      </a>
-    </p>
-    </aside>
-  </footer>
+    <footer class="footer footer-center p-4 bg-base-200 text-base-content">
+      <aside>
+        <p>
+        This work by
+        <a rel="author" href="https://cosmicrose.dev">Rosa Richter</a>
+        is licensed under
+        <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+          CC BY-SA 4.0
+        </a>
+      </p>
+      </aside>
+    </footer>
+  </div>
 </BaseLayout>

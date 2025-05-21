@@ -13,8 +13,8 @@ const pageTitle = "Rosa's Blog";
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
-  <div class="p-4 mt-6 container mx-auto text-justify max-w-prose">
-    <h1 class="text-4xl font-bold mb-8">Rosa's Blog Posts</h1>
+  <div class="p-4 mt-6 container mx-auto text-justify max-w-prose" vocab="https://schema.org" typeof="Blog">
+    <h1 class="text-4xl font-bold mb-8" property="name">Rosa's Blog</h1>
 
     <div class="flex flex-col gap-4">
       {publishedPosts.map((post) => <div>
