@@ -3,23 +3,25 @@ import FormattedDate from '../components/FormattedDate.astro';
 import TagList from '../components/TagList.astro';
 const { post } = Astro.props;
 ---
-<a href={`/blog/${post.id}`}>
-  <div class="card shadow-xl bg-neutral text-neutral-content" property="blogPost">
-    <div class="card-body" vocab="https://schema.org" typeof="BlogPosting" about={`https://cosmicrose.dev/blog/${post.id}`}>
-      <h2 class="card-title" property="name">
+<a href={`/blog/${post.id}`} property="blogPost" typeof="BlogPosting">
+  <div class="card shadow-xl bg-neutral text-neutral-content">
+    <div class="card-body">
+      <h2 class="card-title">
         {post.data.title}
       </h2>
       <div>
-        <p class="mb-4 opacity-50 italic" property="datePublished">
+        <p class="mb-4 opacity-50 italic">
           <FormattedDate date={post.data.publishDate} />
         </p>
-        <p class="mb-4" property="description">
+        <p class="mb-4">
           {post.data.description}
         </p>
 
-        <p property="keywords">
-          <TagList tags={post.data.tags} />
-        </p>
+        <ul class="list-style-none">
+          {post.data.tags.sort().map((tag) =>
+          <li class="inline-block"><a class="link-hover badge badge-primary mr-1" href={`/tags/${tag}`}>#{tag}</a></li>
+          )}
+        </ul>
       </div>
     </div>
   </div>

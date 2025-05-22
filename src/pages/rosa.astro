@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import bernieImage from '../images/bernie-and-me.jpg';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+const pageTitle = "Rosa Richter";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+
+  <main class="prose mx-auto mt-16" vocab="https://schema.org" typeof="Person" about="https://cosmicrose.dev/rosa/#me">
+    <h1>About Rosa</h1>
+
+    <p>
+    My name is <span property="givenName">Rosa</span>.
+    I'm a
+    <span property="jobTitle">software developer</span>
+    in
+    <span property="address" typeof="PostalAddress">
+      <span property="addressLocality">Fort Collins</span>,
+      <span property="addressRegion">Colorado</span>.
+    </span>
+    </p>
+
+    <p>
+      My hobbies are generally technical but only sometimes related to computers.
+      During most of my free time, I write silly little programs, chasing my whimsy and trying to learn more about the protocols, tools, algorithms, data structures and other things that computers use to form the foundation of modern life.
+      I do this on an Arch Linux PC and a handful of machines I host myself and frequently tinker on. I've gotten decent at administrating Linux machines.
+      I'm also a licensed amateur radio operator with the callsign <span property="callSign">KE∅VTF</span>.
+    </p>
+    <p>
+    Besides tech, I love anime, and I would be delighted to give you recommendations.
+    </p>
+
+
+    <figure>
+      <Image src={bernieImage} alt="Rosa holding her cat Bernie" class="rounded-xl" property="image" />
+      <figcaption>I'm the indoorsy type, because indoors is where my cat is.</figcaption>
+    </figure>
+
+
+
+    <p>
+      I've been a programmer for more than ten years.
+      In that time, I've built a lot of cool things.
+      Stuff I've done for work can be found on my resume.
+      Here are some things I made for fun:
+    </p>
+
+
+    <ul>
+      <li>
+        <a property="foaf:made" typeof="SoftwareApplication" href="https://github.com/Cantido/horizons">horizons</a>
+        &mdash;
+        a RESTful-style API for NASA's HORIZONS system, written in Clojure</li>
+      <li>
+        <a property="foaf:made" typeof="SoftwareApplication" href="https://github.com/Cantido/waifu-calendar">waifu-calendar</a>
+        &mdash;
+        An app that fetches the birthdays of your favorite anime characters
+      </li>
+      <li>
+        <a property="foaf:made" typeof="SoftwareApplication" href="https://github.com/Cantido/int_set">int_set</a>
+        &mdash;
+        An Elixir data structure for positive integers which is up to sixty times faster than the standard library set at certain operations
+      </li>
+      <li>
+        <a property="foaf:made" typeof="SoftwareApplication" href="https://github.com/Cantido/spacetraders_client">spacetraders_client</a>
+        &mdash;
+        A bot and web UI for the SpaceTraders API game
+      </li>
+      <li>
+        <a property="foaf:made" typeof="SoftwareApplication" href="https://github.com/Cantido/casino">casino</a>
+        &mdash;
+        a way to play blackjack on the command line
+      </li>
+    </ul>
+
+    <p>
+    I believe that software, automation, and the Internet can give us the power to do a lot of good.
+    My favorite projects are the kind that liberate data and make it available to the world.
+    Public APIs and open protocols contribute to a better world.
+    <p>
+
+    <p>
+      Open-source licenses, especially copyleft licenses, make for better software.
+      That's why I use copyleft licenses on the software I write.
+    </p>
+
+    <p>
+      I advocate for privacy in the digital world because I believe privacy is a human right.
+      Decentralized, federated, and self-hosted digital services are the key to preserving this right.
+    </p>
+
+    <p>
+      Trans rights are human rights.
+    </p>
+
+
+  </main>
+
+  <footer class="footer footer-center p-4">
+    <p>&copy; 2025 Rosa Richter</p>
+  </footer>
+</BaseLayout>
