@@ -13,14 +13,6 @@ const blogCollection = defineCollection({
   }),
 });
 
-const authors = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.yaml', base: "./src/data/authors" }),
-  schema: z.object({
-    name: z.string()
-  }),
-});
-
 export const collections = {
-  'blog': blogCollection,
-  'authors': authors,
+  'blog': blogCollection
 };

@@ -1,12 +1,9 @@
 ---
 import { getEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-import TagList from '../components/TagList.astro';
 import Navigation from '../components/Navigation.astro';
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
-
-const author = await getEntry(frontmatter.author);
 ---
 <BaseLayout pageTitle={frontmatter.title} pageDescription={frontmatter.description}>
   <Navigation />
@@ -22,7 +19,11 @@ const author = await getEntry(frontmatter.author);
           )}
         </ul>
 
-        <p class="mt-2 font-bold mb-0">by {author.data.name}</p>
+        <p class="mt-2 font-bold mb-0">by
+          <a href="https://cosmicrose.dev/rosa/#me" property="author" typeof="Person">
+            Rosa Richter
+          </a>
+        </p>
         <p property="datePublished"><FormattedDate date={frontmatter.publishDate} /></p>
       </header>
 
@@ -35,11 +36,7 @@ const author = await getEntry(frontmatter.author);
     <footer class="footer footer-center p-4 bg-base-200 text-base-content">
       <aside>
         <p>
-        This work by
-        <a href="https://cosmicrose.dev/rosa/#me" property="author" typeof="Person">
-          Rosa Richter
-        </a>
-        is licensed under
+        This work is licensed under
         <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
           CC BY-SA 4.0
         </a>
