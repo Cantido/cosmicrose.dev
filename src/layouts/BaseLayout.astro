@@ -3,13 +3,14 @@ import '@fontsource/league-spartan';
 import '@fontsource/protest-strike';
 import '../styles/global.css';
 import rosaImage from '../images/rosa.jpg';
+import CommonHead from '../components/CommonHead.astro';
 const { pageTitle, pageDescription } = Astro.props;
 ---
 
-<html lang="en" class="h-full w-full" data-theme="night">
+<html lang="en" class="h-full w-full" data-theme="night" prefix="og: https://ogp.me/ns#">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <CommonHead />
+
     <link rel="me" href="https://tech.lgbt/@cosmicrose" />
 
     <meta name="description" content="Rosa's Website">
@@ -29,15 +30,7 @@ const { pageTitle, pageDescription } = Astro.props;
 
     <meta name="fediverse:creator" content="@cosmicrose@tech.lgbt" />
 
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-    <script data-goatcounter="https://cosmicrose.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
 		<title>{pageTitle}</title>
-    <link rel="alternate" type="application/rss+xml"
-      title="RSS Feed for cosmicrose.dev"
-      href="/rss.xml/" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
 	</head>
   <body>
     <slot />

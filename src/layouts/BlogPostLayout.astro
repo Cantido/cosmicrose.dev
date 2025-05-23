@@ -1,47 +1,85 @@
 ---
+import '@fontsource/league-spartan';
+import '@fontsource/protest-strike';
+import '../styles/global.css';
 import { getEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import Navigation from '../components/Navigation.astro';
-import BaseLayout from './BaseLayout.astro';
+import CommonHead from '../components/CommonHead.astro';
+import rosaImage from '../images/rosa.jpg';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title} pageDescription={frontmatter.description}>
-  <Navigation />
 
-  <div vocab="https://schema.org" typeof="BlogPosting">
-    <main class="prose mx-auto p-4">
-      <header class="mb-10 text-left not-prose">
-        <h1 class="text-4xl mb-2 font-display" property="name">{frontmatter.title}</h1>
+<html lang="en" class="h-full w-full" data-theme="night" prefix="og: https://ogp.me/ns#">
+	<head>
+    <CommonHead />
 
-        <ul class="mb-4 list-style-none">
-          {frontmatter.tags.sort().map((tag) =>
-            <li class="inline-block"><a class="link-hover badge badge-primary mr-1" property="keywords" href={`/tags/${tag}`}>#{tag}</a></li>
-          )}
-        </ul>
+    <meta name="description" content="Rosa's Website">
 
-        <p class="mt-2 font-bold mb-0">by
-          <a href="https://cosmicrose.dev/rosa/#me" property="author" typeof="Person">
-            Rosa Richter
+    <meta property="og:title" content={frontmatter.title}>
+    <meta property="og:type" content="article">
+    <meta property="og:image" content={new URL(rosaImage.src, Astro.url)}>
+    <meta property="og:url" content={Astro.url}>
+
+    <meta property="og:description" content={frontmatter.description}>
+    <meta property="og:article:published_time" content={frontmatter.publishDate}>
+    <meta property="og:article:author" content="https://cosmicrose.dev/rosa/#me">
+    <meta property="og:article:author:first_name" content="Rosa">
+    <meta property="og:article:author:last_name" content="Richter">
+
+    {frontmatter.tags.sort().map((tag) =>
+      <meta property="og:article:tag" content={tag}>
+    )}
+
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:domain" content="cosmicrose.dev">
+    <meta property="twitter:url" content={Astro.url}>
+    <meta name="twitter:title" content={frontmatter.title}>
+    <meta name="twitter:description" content={frontmatter.description}>
+    <meta name="twitter:image" content={new URL(rosaImage.src, Astro.url)}>
+
+    <meta name="fediverse:creator" content="@cosmicrose@tech.lgbt" />
+
+		<title>{frontmatter.title}</title>
+	</head>
+  <body>
+    <Navigation />
+
+    <div vocab="https://schema.org" typeof="BlogPosting">
+      <main class="prose mx-auto p-4">
+        <header class="mb-10 text-left not-prose">
+          <h1 class="text-4xl mb-2 font-display" property="name">{frontmatter.title}</h1>
+
+          <ul class="mb-4 list-style-none">
+            {frontmatter.tags.sort().map((tag) =>
+              <li class="inline-block"><a class="link-hover badge badge-primary mr-1" property="keywords" href={`/tags/${tag}`}>#{tag}</a></li>
+            )}
+          </ul>
+
+          <p class="mt-2 font-bold mb-0">by
+            <a href="https://cosmicrose.dev/rosa/#me" property="author" typeof="Person">
+              Rosa Richter
+            </a>
+          </p>
+          <p property="datePublished"><FormattedDate date={frontmatter.publishDate} /></p>
+        </header>
+
+        <div property="text">
+          <slot />
+        </div>
+
+      </main>
+
+      <footer class="footer footer-center p-4 bg-base-200 text-base-content">
+        <aside>
+          <p>
+          This work is licensed under
+          <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+            CC BY-SA 4.0
           </a>
         </p>
-        <p property="datePublished"><FormattedDate date={frontmatter.publishDate} /></p>
-      </header>
-
-      <div property="text">
-        <slot />
-      </div>
-
-    </main>
-
-    <footer class="footer footer-center p-4 bg-base-200 text-base-content">
-      <aside>
-        <p>
-        This work is licensed under
-        <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-          CC BY-SA 4.0
-        </a>
-      </p>
-      </aside>
-    </footer>
-  </div>
-</BaseLayout>
+        </aside>
+      </footer>
+    </div>
+	</body>
+</html>

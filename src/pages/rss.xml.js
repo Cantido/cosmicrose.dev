@@ -15,7 +15,7 @@ export async function GET(context) {
     const author = await getEntry(post.data.author);
     const item = {
       title: post.data.title,
-      author: author.data.email,
+      author: "cosmic.lady.rosa@gmail.com",
       pubDate: post.data.publishDate,
       description: post.data.description,
       link: `/blog/${post.id}`,
